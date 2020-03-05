@@ -255,7 +255,7 @@ def check_ceph_data(ctx, config):
     """
     log.info('Checking for non-empty /var/lib/ceph...')
     processes = ctx.cluster.run(
-        args='test -z $(ls -A /var/lib/ceph)',
+        args='test -z $(sudo ls -A /var/lib/ceph)',
         wait=False,
     )
     failed = False
