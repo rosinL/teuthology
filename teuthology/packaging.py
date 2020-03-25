@@ -18,6 +18,8 @@ from teuthology.misc import sudo_write_file
 from teuthology.orchestra.opsys import OS, DEFAULT_OS_VERSION
 from teuthology.orchestra.run import Raw
 
+from teuthology.suite import util
+
 log = logging.getLogger(__name__)
 
 '''
@@ -483,7 +485,8 @@ class GitbuilderProject(object):
         """
         Initializes the class from a teuthology job config
         """
-        self.arch = self.job_config.get('arch', 'x86_64')
+        self.machine_type = self.job_config.get("machine_type")
+        self.arch = util.get_arch(self.machine_type)
         self.os_type = self.job_config.get("os_type")
         self.flavor = self.job_config.get("flavor")
         self.codename = self.job_config.get("codename")
