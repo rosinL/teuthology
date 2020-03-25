@@ -113,6 +113,7 @@ class Run(object):
             archive_upload_key=config.archive_upload_key,
             suite_repo=config.get_ceph_qa_suite_git_url(),
             suite_relpath=self.args.suite_relpath,
+            arch=self.args.arch,
         )
         return self.build_base_config()
 
@@ -280,6 +281,7 @@ class Run(object):
         job_config = JobConfig.from_dict(conf_dict)
         job_config.name = self.name
         job_config.priority = self.args.priority
+        job_config.arch = self.args.arch
         if self.args.email:
             job_config.email = self.args.email
         if self.args.owner:

@@ -23,6 +23,7 @@ optional arguments:
   --name NAME                    name for this teuthology run
   --suite-path SUITE_PATH        Location of ceph-qa-suite on disk. If not specified,
                                  it will be fetched
+  --arch ARCH                    set architecture(x86_64/aarch64, default is x86_64)
 """
 import docopt
 

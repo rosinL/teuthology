@@ -135,6 +135,7 @@ Scheduler arguments:
                               with --rerun argument. This number can be found
                               in the output of teuthology-suite command. -1
                               for a random seed [default: -1].
+ --arch ARCH                  architecture [default: x86_64]
 
 """.format(
     default_machine_type=config.default_machine_type,
